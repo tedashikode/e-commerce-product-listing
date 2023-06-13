@@ -2,20 +2,23 @@ import React, { useState, useEffect } from 'react'
 
 const Card = ({ name, price, img, description }) => {
   return(
-    <div className="bg-amber-950 border rounded flex flex-col items-center">
-      <h1>This is a card component</h1>
-      <div className="flex flex-col">
+    <>
+      <div className="border rounded-sm flex flex-col gap-4">
+        <div className="bg-lime-400 flex flex-col items-center ">
           <img 
-            className="object-contain" 
-            width={208}
-            height={208}
+            className="object-fit" 
+            width={144}
+            height={144}
             src={img} 
             alt={description} 
-          />
-        <p>{name}</p>
-        <p>{price}</p>
+            />
+        </div>
+        <div className="flex flex-row justify-between">
+          <p>{name}</p>
+          <p>{price}</p>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
@@ -50,10 +53,10 @@ const Product = () => {
 
 
   return (
-    <div className="h-full w-full">
+    <div className="grid grid-cols-4 gap-4">
       {products.map(product => (
         <Card 
-          name={product.name} 
+          name={product.title} 
           price={product.price} 
           img={product.image} 
           description={product.description}

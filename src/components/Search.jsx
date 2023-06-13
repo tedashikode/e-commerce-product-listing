@@ -11,12 +11,14 @@ const Search = () => {
                 <div>
                     
                 </div>
-                <input 
-                    className="py-2 px-4 border rounded-3xl hover:bg-sky-500 hover:placeholder-slate-950"
-                    name="Search"   
-                    type="search" 
-                    placeholder="Search"
-                />
+                <span>
+                    <input 
+                        className="py-2 px-4 border rounded-3xl hover:bg-sky-500 hover:placeholder-slate-950"
+                        name="Search"   
+                        type="search" 
+                        placeholder="Search"
+                    />
+                </span>
             </form>
         </div>
     )
