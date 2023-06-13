@@ -1,11 +1,16 @@
 import React from 'react'
+import Button from './Button'
 
 const Search = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+    function searchProducts() {
+        console.log("searching...");
+    }
+
+    return (
+        <div>
+            <Button btnName={"Search"} handleClick={() => searchProducts()}/>
+        </div>
+    )
 }
 
 export default Search
