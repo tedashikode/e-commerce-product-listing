@@ -6,7 +6,7 @@ const Button = ({ btnName, handleClick }) => {
       <button
         type="button"
         onClick={handleClick}
-        className="w-24 h-8 border rounded-sm bg-sky-500"
+        className="w-32 h-8 border-2 border-black rounded-3xl bg-sky-500"
       >
         {btnName}
       </button>

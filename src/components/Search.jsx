@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from './Button'
 
 const Search = () => {
     function searchProducts() {
@@ -8,7 +7,17 @@ const Search = () => {
 
     return (
         <div>
-            <Button btnName={"Search"} handleClick={() => searchProducts()}/>
+            <form action="">
+                <div>
+                    
+                </div>
+                <input 
+                    className="py-2 px-4 border rounded-xl"
+                    name="Search"   
+                    type="search" 
+                    placeholder="Search"
+                />
+            </form>
         </div>
     )
 }
