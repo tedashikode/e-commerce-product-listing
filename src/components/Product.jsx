@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react'
 
-const Card = ({ name, price, img }) => {
+const Card = ({ name, price, img, description }) => {
   return(
-    <div className="h-full w-full rounded bg-slate-700">
+    <div className="bg-amber-950 border rounded flex flex-col items-center">
       <h1>This is a card component</h1>
-      <div>
-        <img src={img} alt="" />
+      <div className="flex flex-col">
+          <img 
+            className="object-contain" 
+            width={208}
+            height={208}
+            src={img} 
+            alt={description} 
+          />
         <p>{name}</p>
         <p>{price}</p>
       </div>
@@ -46,7 +52,12 @@ const Product = () => {
   return (
     <div className="h-full w-full">
       {products.map(product => (
-        <Card name={product.name} price={product.price} img={product.image}/>
+        <Card 
+          name={product.name} 
+          price={product.price} 
+          img={product.image} 
+          description={product.description}
+        />
       ))}
     </div>
   )
