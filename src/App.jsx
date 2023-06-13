@@ -1,11 +1,13 @@
+import Home from '../components/Home'
 import './App.css'
+
 
 export default function App() {
 
   return (
     <>
-      <div className="bg-green-950 text-white h-full w-full">
-        Let's get this show on the road
+      <div className="m-0 p-0 w-full h-full">
+        <Home />
       </div>
     </>
   )
