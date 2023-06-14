@@ -3,16 +3,20 @@ import React, { useState, useEffect } from 'react'
 const Card = ({ name, price, img, description }) => {
   return(
     <>
-      <div className="w-[349px] h-[293px] mb-4 border-2 rounded-2xl flex flex-col justify-center">
-          <img 
-            className="w-full h-2/3 object-contain" 
-            src={img} 
-            alt={description} 
-          />
-          <div className="flex-row justify-between">
-            <p>{name}</p>
-            <p>{price}</p>
-          </div>
+      <div className="w-[217px] h-[293px] mb-4 border-2 border-gray-700 rounded-2xl flex flex-col overflow-hidden bg-white">
+        {/* <div>
+
+        </div> */}
+        <img 
+          className="w-full h-2/3 object-contain" 
+          src={img} 
+          alt={description} 
+        />
+        
+        <div className="bg-gray-700 h-1/3 w-full text-white flex flex-row justify-between rounded-b-xl mt-2">
+          <p>{name}</p>
+          <p>{price}</p>
+        </div>
       </div>
     </>
   )
@@ -49,11 +53,11 @@ const Products = () => {
 
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-5 gap-4">
       {products.map(product => (
         <Card 
           name={product.title} 
-          price={product.price} 
+          price={`$${product.price}`} 
           img={product.image} 
           description={`${product.title} image`}
         />
