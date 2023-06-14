@@ -6,7 +6,7 @@ const Search = () => {
     }
 
     return (
-        <div>
+        <div className="py-2">
             <form action="">
                 <div>
                     

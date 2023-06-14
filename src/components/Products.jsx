@@ -3,26 +3,22 @@ import React, { useState, useEffect } from 'react'
 const Card = ({ name, price, img, description }) => {
   return(
     <>
-      <div className="border rounded-sm flex flex-col gap-4">
-        <div className="bg-lime-400 flex flex-col items-center ">
+        <div className="bg-purple-950 mb-4">
           <img 
-            className="object-fit" 
-            width={144}
-            height={144}
+            className="object-fit py-2 px-2 border-2 rounded-2xl" 
             src={img} 
             alt={description} 
             />
+          <div className="flex flex-row justify-between">
+            <p>{name}</p>
+            <p>{price}</p>
+          </div>
         </div>
-        <div className="flex flex-row justify-between">
-          <p>{name}</p>
-          <p>{price}</p>
-        </div>
-      </div>
     </>
   )
 }
 
-const Product = () => {
+const Products = () => {
   const [products, setProducts] = useState([])
   
   useEffect(() => {
@@ -53,17 +49,17 @@ const Product = () => {
 
 
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-3 gap-4">
       {products.map(product => (
         <Card 
           name={product.title} 
           price={product.price} 
           img={product.image} 
-          description={product.description}
+          description={`${product.title} image`}
         />
       ))}
     </div>
   )
 }
 
-export default Product
+export default Products
