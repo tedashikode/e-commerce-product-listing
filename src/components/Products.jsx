@@ -3,17 +3,17 @@ import React, { useState, useEffect } from 'react'
 const Card = ({ name, price, img, description }) => {
   return(
     <>
-        <div className="bg-purple-950 mb-4">
+      <div className="w-[349px] h-[293px] mb-4 border-2 rounded-2xl flex flex-col justify-center">
           <img 
-            className="object-fit py-2 px-2 border-2 rounded-2xl" 
+            className="w-full h-2/3 object-contain" 
             src={img} 
             alt={description} 
-            />
-          <div className="flex flex-row justify-between">
+          />
+          <div className="flex-row justify-between">
             <p>{name}</p>
             <p>{price}</p>
           </div>
-        </div>
+      </div>
     </>
   )
 }
