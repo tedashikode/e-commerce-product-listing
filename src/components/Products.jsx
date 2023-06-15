@@ -4,15 +4,12 @@ const Card = ({ name, price, img, description }) => {
   return(
     <>
       <div className="w-[217px] h-[293px] mb-4 border-2 border-gray-700 rounded-2xl flex flex-col overflow-hidden bg-white">
-        {/* <div>
-
-        </div> */}
         <img 
           className="w-full h-2/3 object-contain" 
           src={img} 
           alt={description} 
         />
-        
+      
         <div className="bg-gray-700 h-1/3 w-full text-white flex flex-row justify-between rounded-b-xl mt-2">
           <p>{name}</p>
           <p>{price}</p>
@@ -53,7 +50,7 @@ const Products = () => {
 
 
   return (
-    <div className="grid grid-cols-5 gap-4">
+    <div className="w-full h-full grid grid-cols-5 gap-4 bg-orange-500">
       {products.map(product => (
         <Card 
           name={product.title} 
