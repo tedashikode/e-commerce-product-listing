@@ -6,11 +6,8 @@ const Search = () => {
     }
 
     return (
-        <div className="py-2">
+        <div className="py-2 px-4">
             <form action="">
-                <div>
-                    
-                </div>
                 <span>
                     <input 
                         className="py-2 px-4 border rounded-3xl hover:bg-sky-500 hover:placeholder-slate-950"

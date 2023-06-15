@@ -50,7 +50,7 @@ const Products = () => {
 
 
   return (
-    <div className="w-full h-full grid grid-cols-5 gap-4 bg-orange-500">
+    <div className="w-full h-full grid grid-cols-5 pt-12 px-4 gap-4 bg-orange-500">
       {products.map(product => (
         <Card 
           name={product.title} 
