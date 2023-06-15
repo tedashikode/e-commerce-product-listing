@@ -21,6 +21,7 @@ const Card = ({ name, price, img, description }) => {
 
 const Products = () => {
   const [products, setProducts] = useState([])
+  const [pageNumber, setPageNumber] = useState(0)
   
   useEffect(() => {
     productsFetched()
@@ -48,17 +49,23 @@ const Products = () => {
     // console.log(products);
   });
 
+  const productsPerPage = 5;
+  const pagesVisited = pageNumber * productsPerPage;
+
+  const displayProducts = products
+  .slice(pagesVisited, pagesVisited + productsPerPage)
+  .map(product => (
+    <Card 
+      name={product.title} 
+      price={`$${product.price}`} 
+      img={product.image} 
+      description={`${product.title} image`}
+    />
+  ))
 
   return (
-    <div className="w-full h-full grid grid-cols-5 pt-12 px-4 gap-4 bg-orange-500">
-      {products.map(product => (
-        <Card 
-          name={product.title} 
-          price={`$${product.price}`} 
-          img={product.image} 
-          description={`${product.title} image`}
-        />
-      ))}
+    <div className="w-full h-full grid grid-cols-5 pt-6 px-4 gap-4 bg-orange-500">
+      {displayProducts}
     </div>
   )
 }
