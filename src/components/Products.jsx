@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react'
-import ReactPaginate from 'react-paginate'
+// import ReactPaginate from 'react-paginate'
 
-import Button from './Button'
+// import Button from './Button'
 
 
 const Card = ({ name, price, img, description }) => {
   return(
     <>
-      <div className="w-[217px] h-[293px] mb-4 border-2 border-gray-700 rounded-2xl flex flex-col overflow-hidden bg-white">
+      <div className="w-40 h-52 m-0 md:w-[217px] md:h-[293px] md:mb-4 border-2 border-gray-700 rounded-2xl md:flex md:flex-col overflow-hidden bg-white">
         <img 
           className="w-full h-2/3 object-contain" 
           src={img} 
           alt={description} 
         />
-        <div className="bg-gray-700 h-1/3 w-full text-white flex flex-row justify-between rounded-b-xl mt-2">
+        <div className="bg-gray-700 h-1/3 w-full text-white rounded-b-xl mt-2">
           <p>{name}</p>
           <p>{price}</p>
         </div>
@@ -73,9 +73,9 @@ const Products = () => {
   }
 
   return (
-    <div className="w-full h-full grid grid-cols-5 pt-6 px-4 gap-4 bg-orange-500">
+    <div className="w-full h-full grid grid-cols-2 md:grid-cols-5 pt-6 px-4 md:gap-4 bg-orange-500">
       {displayProducts}
-      <div className="bg-green-950">
+      {/* <div className="bg-green-950">
         <ReactPaginate 
           previousLabel={
             <span>
@@ -91,7 +91,7 @@ const Products = () => {
           pageCount={pageCount}
           onPageChange={changePage}
           />
-      </div>
+      </div> */}
     </div>
   )
 }

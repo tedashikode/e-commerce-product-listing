@@ -8,8 +8,8 @@ import Category from '../components/Category'
 const Home = () => {
   return (
     <>
-      <div className="p-0 m-0 w-full h-full flex"> 
-        <div className="flex-grow">
+      <div className="p-0 m-0 w-full h-full flex border-4 border-lime-600"> 
+        <div className="md:flex-grow">
           <Banner />
           <div className="flex items-center">
             <Search />
