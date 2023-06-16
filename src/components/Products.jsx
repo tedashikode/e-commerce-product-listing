@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import ReactPaginate from 'react-paginate'
+
+import Button from './Button'
+
 
 const Card = ({ name, price, img, description }) => {
   return(
@@ -9,7 +13,6 @@ const Card = ({ name, price, img, description }) => {
           src={img} 
           alt={description} 
         />
-      
         <div className="bg-gray-700 h-1/3 w-full text-white flex flex-row justify-between rounded-b-xl mt-2">
           <p>{name}</p>
           <p>{price}</p>
@@ -63,9 +66,32 @@ const Products = () => {
     />
   ))
 
+  const pageCount = Math.ceil(products.length / productsPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  }
+
   return (
     <div className="w-full h-full grid grid-cols-5 pt-6 px-4 gap-4 bg-orange-500">
       {displayProducts}
+      <div className="bg-green-950">
+        <ReactPaginate 
+          previousLabel={
+            <span>
+              <Button btnName={"Previous"}/>
+            </span>
+          }
+          nextLabel={
+            <span>
+              <Button btnName={"Next"}/>
+            </span>
+          }
+          containerClassName="flex items-center justify-center mt-8 mb-4"
+          pageCount={pageCount}
+          onPageChange={changePage}
+          />
+      </div>
     </div>
   )
 }
