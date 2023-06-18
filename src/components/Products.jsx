@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import ReactPaginate from 'react-paginate'
 
-import Button from './Button'
 import Card from './Card'
+
+import { LeftChevron } from '../assets/icons/LeftChevron'
+import { RightChevron } from '../assets/icons/RightChevron copy'
 
 //displaying a specified number of products per page - pagination
 const DisplayProducts = ({ products, pagesVisited,  productsPerPage }) => {
@@ -72,9 +74,9 @@ const Products = () => {
           ?
             (
               <DisplayProducts 
-              products={products}
-              pagesVisited={pagesVisited}
-              productsPerPage={productsPerPage}
+                products={products}
+                pagesVisited={pagesVisited}
+                productsPerPage={productsPerPage}
               />
             )
           : 
@@ -84,18 +86,18 @@ const Products = () => {
       <ReactPaginate 
         previousLabel={
           <span>
-            <Button btnName={"Previous"}/>
+            <LeftChevron />
           </span>
         }
         nextLabel={
-          <span>
-            <Button btnName={"Next"}/>
+           <span>
+            <RightChevron />
           </span>
         }
         containerClassName="mt-8 mb-4 bg-green-950 flex justify-center items-center"
         pageCount={pageCount}
         onPageChange={changePage}
-        />
+        pageClassName="w-10 h-10 rounded-md flex items-center justify-center bg-sky-500 mx-1 border-2"/>
     </div>
   )
 }
