@@ -3,10 +3,11 @@ import './App.css'
 
 
 export default function App() {
-
   return (
     <>
-      <Home />
+      <div className="w-screen h-screen m-0">
+        <Home />
+      </div>
     </>
   )
 }
