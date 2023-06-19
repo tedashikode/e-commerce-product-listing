@@ -1,13 +1,20 @@
 import React from 'react'
 
 import Button from './Button'
+import { DownChevron } from '../assets/icons/DownChevron'
 
-
-const Category = () => {
+const Category = ({ categories, setCategories, handleClick }) => {
+  
   return (
-    <div>
-      <Button btnName={"Category"}/>
-    </div>
+    <>
+      <div className="flex items-center">
+        <Button 
+          btnName={"Category"}
+          onClick={handleClick}
+        />
+        <DownChevron />
+      </div>
+    </>
   )
 }
 

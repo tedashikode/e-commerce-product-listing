@@ -4,7 +4,7 @@ import ReactPaginate from 'react-paginate'
 import Card from './Card'
 
 import { LeftChevron } from '../assets/icons/LeftChevron'
-import { RightChevron } from '../assets/icons/RightChevron copy'
+import { RightChevron } from '../assets/icons/RightChevron'
 
 //displaying a specified number of products per page - pagination
 const DisplayProducts = ({ products, pagesVisited,  productsPerPage }) => {
@@ -67,8 +67,8 @@ const Products = () => {
   }
 
   return (
-    <div className="w-full h-full bg-orange-500">
-      <div className="grid grid-cols-2 md:grid-cols-5 pt-6 px-4 md:gap-4">
+    <div className="w-full h-full">
+      <div className="grid grid-cols-2 md:grid-cols-5 pt-4">
         {
           products.length> 0 
           ?
@@ -85,19 +85,19 @@ const Products = () => {
       </div>
       <ReactPaginate 
         previousLabel={
-          <span>
+          <span className="w-10 h-10 rounded-md flex items-center justify-center bg-sky-500 mx-1 border-2 hover:pointer">
             <LeftChevron />
           </span>
         }
         nextLabel={
-           <span>
+           <span className="w-10 h-10 rounded-md flex items-center justify-center bg-sky-500 mx-1 border-2 hover:pointer">
             <RightChevron />
           </span>
         }
-        containerClassName="mt-8 mb-4 bg-green-950 flex justify-center items-center"
+        containerClassName="mt-8 mb-4 flex justify-center items-center"
         pageCount={pageCount}
         onPageChange={changePage}
-        pageClassName="w-10 h-10 rounded-md flex items-center justify-center bg-sky-500 mx-1 border-2"/>
+        pageClassName="w-10 h-10 rounded-md flex items-center justify-center bg-sky-500 mx-1 border-2 hover:pointer"/>
     </div>
   )
 }

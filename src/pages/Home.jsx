@@ -8,13 +8,15 @@ import Category from '../components/Category'
 const Home = () => {
   return (
     <>
-      <div className="p-0 m-0 w-full h-full flex flex-col border-4 border-lime-600"> 
+      <div className="p-0 m-0 w-full h-full flex flex-col border-4 border-lime-600 font-poppins"> 
           <Banner />
           <div className="flex items-center">
             <Search />
             <Category />
           </div>
-          <Products />
+          <div className="border-4 border-purple-600">
+            <Products />
+          </div>
       </div>
     </>
   )
