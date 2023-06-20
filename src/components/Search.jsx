@@ -1,10 +1,7 @@
 import React from 'react'
 
-const Search = () => {
-    function searchProducts() {
-        console.log("searching...");
-    }
-
+const Search = ({handleClick}) => {
+    
     return (
         <div className="py-2 px-4">
             <form action="">
@@ -14,6 +11,7 @@ const Search = () => {
                         name="Search"   
                         type="search" 
                         placeholder="Search"
+                        onChange={handleClick}
                     />
                 </span>
             </form>
